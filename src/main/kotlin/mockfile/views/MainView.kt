@@ -73,11 +73,11 @@ class MainView : View("Mockfile util") {
                 commandsModel.commit {
                     commands = commandsModel.item
                 }
-                runAsyncWithProgress() {
+                runAsyncWithProgress {
                     content = controller.runController(property, commands)
                 } success {
                     val fileChooser = FileChooser()
-                    val filter = FileChooser.ExtensionFilter("Текстовые файлы (*.txt)", "*.txt")
+                    val filter = FileChooser.ExtensionFilter("Текстовые файлы (*.txt.out)", "*.txt.out")
                     fileChooser.extensionFilters += filter
 
                     var newFile = fileChooser.showSaveDialog(currentWindow)
