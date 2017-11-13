@@ -55,7 +55,9 @@ class MainView : View("Mockfile util") {
                         error("Нужно ввести цифры")
                     } else null
                 }
-
+            }
+            field("Символ для продолжения ответа") {
+                textfield(commandsModel.moreMessage)
             }
         }
 

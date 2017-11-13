@@ -9,7 +9,9 @@ import tornadofx.*
 class CommandsHolder {
 
     var commandLines by property<String>()
+    var moreMessage by property(" ")
     fun commandLinesProperty() = getProperty(CommandsHolder::commandLines)
+    fun moreMessageProperty() = getProperty(CommandsHolder::moreMessage)
 
     override fun toString(): String {
         return commandLines
@@ -18,4 +20,5 @@ class CommandsHolder {
 
 class CommandsModel : ItemViewModel<CommandsHolder>(CommandsHolder()) {
     val commandLines = bind { item?.commandLinesProperty() }
+    val moreMessage = bind { item?.moreMessageProperty() }
 }

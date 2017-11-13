@@ -53,9 +53,9 @@ class TelnetResourceAskAction {
         outputStream.flush()
     }
 
-    fun sendSpace() {
+    fun sendMore(message: String) {
         val outputStream = client.outputStream
-        outputStream.write(" ")
+        outputStream.write(message)
         outputStream.flush()
     }
 }

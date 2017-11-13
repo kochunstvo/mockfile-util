@@ -63,7 +63,7 @@ class GenProtocolController : Controller() {
             println("Response: \n" + resp)
 
             while (!resp.contains(helloString)) {
-                askAction.sendSpace()
+                askAction.sendMore(commandsHolder.moreMessage)
                 Thread.sleep(respTimeout)
                 resp = askAction.readData()
                 if (!resp.isBlank()) {
